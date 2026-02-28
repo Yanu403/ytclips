@@ -1,9 +1,13 @@
 import argparse
 import json
 import logging
+import sys
 from pathlib import Path
 
-from core.pipeline import (
+if __package__ in (None, ""):
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from core.pipeline import (  # noqa: E402
     AnalyzeStep,
     ClipStep,
     DownloadStep,
@@ -13,8 +17,8 @@ from core.pipeline import (
     TitleGeneratorStep,
     TranscriptStep,
 )
-from core.pipeline.base import PipelineContext, PipelineStep
-from core.utils import configure_logging, ensure_dir, require_binary
+from core.pipeline.base import PipelineContext, PipelineStep  # noqa: E402
+from core.utils import configure_logging, ensure_dir, require_binary  # noqa: E402
 
 logger = logging.getLogger(__name__)
 
