@@ -10,14 +10,20 @@ pip install -e .
 
 ## Run
 
-From repository root:
+Preferred module execution:
 
 ```bash
-python -m core.main --url "https://www.youtube.com/watch?v=..."
+python -m core --url "https://www.youtube.com/watch?v=..."
 ```
 
-From `core/` directory:
+Or via console script:
 
 ```bash
-python main.py --url "https://www.youtube.com/watch?v=..."
+ytclips --url "https://www.youtube.com/watch?v=..."
 ```
+
+## Notes
+
+- Only HTTPS YouTube URLs are accepted (`youtube.com`, `youtu.be`).
+- By default, `--output-dir` must stay inside current working directory.
+- Use `--allow-outside-output-dir` only if you intentionally want output elsewhere.

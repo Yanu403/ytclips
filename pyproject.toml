@@ -15,3 +15,7 @@ dependencies = [
 
 [tool.setuptools]
 packages = ["core", "core.pipeline", "core.services", "core.utils"]
+
+
+[project.scripts]
+ytclips = "core.main:main"
