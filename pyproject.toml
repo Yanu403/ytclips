@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ytclips"
+version = "0.1.0"
+description = "YouTube auto-clip engine"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "yt-dlp>=2024.0.0",
+  "requests>=2.31.0",
+]
+
+[tool.setuptools]
+packages = ["core", "core.pipeline", "core.services", "core.utils"]
+
+
+[project.scripts]
+ytclips = "core.main:main"
